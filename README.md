@@ -1,9 +1,9 @@
 # Rustacean English Vocab
-Well this was fun, my first Rust project! The main goal was that I needed a small project touching on a bunch of little things that I can use to slowly iterate and improve on as I learn more about the Rust language.
+Well, this was fun—my first Rust project! The main goal was that I needed a small project touching on a bunch of little things that I could slowly iterate and improve on as I learn more about the Rust language.
 
-This project came about because I recently rediscovered my interest in Morse Code. It got me thinking about what makes someone fluent in a language, or at least vocab fluent. The idea was, if I was to provide a vocabulary list of the top 1000 most used words in the English language, how far would that take you in an average everyday conversation, a news article, or even a book? Could you approach learning using the 80/20 rule? What if you wanted to experiment and develop your own word lists, maybe context specific words, or maybe going the next level to popular phrases?
+This project came about because I recently rediscovered my interest in Morse Code. It got me thinking about what makes someone fluent in a language, or at least fluent in vocabulary. The idea was, if I were to provide a vocabulary list of the top 1000 most used words in the English language, how far would that take you in an average everyday conversation, a news article, or even a book? Could you approach learning using the 80/20 rule? What if you wanted to experiment and develop your own word lists, maybe context specific words, or maybe go the next level with popular phrases?
 
-On my quest to learn Morse Code, I might fork this into something more specialized, or expand this into other languages and finally get back to learning German again. But if all fails, at least I'm learning Rust, eh?
+On my quest to learn Morse Code, I might fork this into something more specialized or, expand this into other languages, and finally get back to learning German again. But if all fails, at least I'm learning Rust, eh?
 
 ## Installing Rust
 ```
