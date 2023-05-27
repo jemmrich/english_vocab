@@ -14,16 +14,18 @@ rustup-init
 ## Running the Project
 ```
 cargo install
-cargo run -- "I am a sentence with words" ./words.txt
+cargo run -- "I am a sentence with words" ./1000words.txt
 ```
 
 or
 
 ```
-./english_vocab "I am a sentence with words" ./words.txt
+./english_vocab "I am a sentence with words" ./1000words.txt
 ```
 
 ## Current Output Example
+Using the supplied 1000 most popular English words and using a random paragraph generator, here is what it looks like.
+
 ```
 cargo run -- "If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear." ./1000words.txt
 
