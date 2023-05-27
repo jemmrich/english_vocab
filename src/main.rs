@@ -7,13 +7,14 @@ use regex::Regex;
 
 // How to run:
 // cargo install
-// cargo run -- "I am a sentence with words" ./1000words.txt
+// cargo run -- "I am a sentence with words" ./english-words/1000-top-words.txt
 // or
-// ./english_vocab "I am a sentence with words" ./1000words.txt
+// ./english_vocab "I am a sentence with words" ./english-words/1000-top-words.txt
 
 struct VocabResults {
   total_words: i32,
-  unknown_words: usize,
+  total_unknown_words: usize,
+  unknown_word_list: String,
   words_found: i32,
   understanding: f32,
   understood_paragraph: String,
@@ -31,13 +32,14 @@ fn main() {
 
   // Show the results
   println!("\nResults");
-  println!("Original Paragraph: \n{0}\n", paragraph);
-  println!("Normalized Paragraph: \n{0}\n", normalized_paragraph);
-  println!("Understood Paragraph: \n{0}\n", results.understood_paragraph);
+  println!("Original paragraph: \n{0}\n", paragraph);
+  println!("Normalized paragraph: \n{0}\n", normalized_paragraph);
+  println!("Understood paragraph: \n{0}\n", results.understood_paragraph);
 
   println!("Unique words: {0}", results.total_words);
-  println!("Unknown words: {0}", results.unknown_words);
   println!("Found words: {0}", results.words_found);
+  println!("Total unknown words: {0}", results.total_unknown_words);
+  println!("Unknown word list: {0}", results.unknown_word_list);
   println!("Understanding: {0:.2}%", results.understanding);
 }
 
@@ -101,9 +103,12 @@ fn analyze_paragraph(paragraph: &str, file_path: &str) -> VocabResults {
     understood_paragraph = reg.replace_all(understood_paragraph.as_str(), "_").to_string();
   });
 
+  let total_unknown_words: usize = unknown_words.len();
+
   let results: VocabResults = VocabResults {
     total_words,
-    unknown_words: unknown_words.len(),
+    total_unknown_words,
+    unknown_word_list: unknown_words.into_iter().collect::<Vec<&str>>().join(", "),
     words_found,
     understanding,
     understood_paragraph,

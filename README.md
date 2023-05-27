@@ -14,35 +14,44 @@ rustup-init
 ## Running the Project
 ```
 cargo install
-cargo run -- "I am a sentence with words" ./1000words.txt
+cargo run -- "I am a sentence with words" ./english-words/5000-top-words.txt
 ```
 
 or
 
 ```
-./english_vocab "I am a sentence with words" ./1000words.txt
+./english_vocab "I am a sentence with words" ./english-words/5000-top-words.txt
 ```
 
 ## Current Output Example
-Using the supplied 1000 most popular English words and using a random paragraph generator, here is what it looks like.
+Using the supplied 2500 most popular English words and using a random paragraph generator, here is what it looks like.
 
 ```
-cargo run -- "If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear." ./1000words.txt
+cargo run -- "If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear." ./english-words/2500-top-words.txt
 
 Results
-Original Paragraph:
+Original paragraph:
 If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.
 
-Normalized Paragraph:
+Normalized paragraph:
 if youre looking for random paragraphs youve come to the right place when a random word or a random sentence isnt quite enough the next logical step is to find a random paragraph we created the random paragraph generator with you in mind the process is quite simple choose the number of random paragraphs youd like to see and click the button your chosen number of paragraphs will instantly appear
 
-Understood Paragraph:
-if _ _ for _ _ _ come to the right place when a _ word or a _ _ _ quite enough the next _ step _ to find a _ _ we _ the _ _ _ with you in mind the process _ quite simple choose the number of _ _ _ like to see and _ the _ your _ number of _ will _ appear
+Understood paragraph:
+if _ looking for random _ _ come to the right place when a random word or a random _ _ quite enough the next _ step is to find a random _ we created the random _ _ with you in mind the process is quite simple choose the number of random _ _ like to see and click the button your _ number of _ will _ appear
 
 Unique words: 49
-Unknown words: 17
-Found words: 39
-Understanding: 79.59%
+Found words: 38
+Total unknown words: 11
+Unknown word list: isnt, paragraph, chosen, logical, youd, paragraphs, generator, youre, instantly, sentence, youve
+Understanding: 77.55%
+```
+
+## Creating Your Own English Word Lists
+In the `english-words` folder, I have supplied a great resource of the 10,000 most common English words or order of frequency, which I have borrowed from https://github.com/first20hours/google-10000-english/.
+
+To create your own variation from this list, for example, you want to see the impact of knowing just 500 of the most frequently used words, or maybe 5000, you can run this on Linux or MacOs:
+```
+head -500 english-words/google-10000-english/google-10000-english-usa-no-swears.txt > english-words/500-top-words.txt
 ```
 
 
