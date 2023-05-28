@@ -54,6 +54,7 @@ To create your own variation from this list, for example, you want to see the im
 head -500 english-words/google-10000-english/google-10000-english-usa-no-swears.txt > english-words/500-top-words.txt
 ```
 
+Another resource I came across was this list of over 466,000 words which can be found here https://github.com/dwyl/english-words, however these
 
 ## Todo's
 A few things I would like to improve on:
